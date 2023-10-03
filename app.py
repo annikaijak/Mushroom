@@ -60,8 +60,8 @@ for col in [df.columns]:
 
 # Set the app title and sidebar header
 st.title("Mushroom Classifier")
-st.sidebar.header("Choose what you want to do")
-
+st.sidebar.header("Choose what you want to do?")
+choose = st.sidebar.selectbox(" ", ("Information about the interface", "EDA", "Mushroom Classifier"))
 
 # Introduction
 
