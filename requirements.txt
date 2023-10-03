@@ -4,3 +4,4 @@ scikit-learn==0.24.2  # Version may vary
 numpy==1.21.2  # Version may vary
 matplotlib==3.6.2
 seaborn==0.10.1
+openpyxl
