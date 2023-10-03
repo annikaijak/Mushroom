@@ -309,7 +309,3 @@ if st.button("Predict"):
                    st_su_be_ri, st_co_ab_ri, st_co_be_ri, ri_ty,
                    sp_pr_co, po, ha)
     st.text(result)
-
-
-if __name__ == '__main__':
-    main()
