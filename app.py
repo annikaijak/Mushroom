@@ -64,6 +64,8 @@ def load_data():
 
 # Load the data using the defined function
 df = load_data()
+for col in [df.column]:
+    df[col] = df[col].astype('category')
 
 # Set the app title and sidebar header
 st.title("Mushroom Classifier")
