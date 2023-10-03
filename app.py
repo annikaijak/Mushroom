@@ -2,27 +2,18 @@
 import streamlit as st # To be able to run streamlit app
 import pandas as pd # To manipulate dataframes
 import numpy as np # To manipulate data
-
-# Visualisations
 import seaborn as sns # To viualize data
 import matplotlib.pyplot as plt # To visualize data
-
-# Data preprocessing
 from sklearn.preprocessing import LabelEncoder # To encode categorical variables
 from sklearn.preprocessing import StandardScaler # To standardize data
-
-# UML
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
-
-# SML
 from sklearn.model_selection import train_test_split # To split up data into a training and a test dataset
 from sklearn.naive_bayes import GaussianNB # To build SML
 from sklearn.tree import DecisionTreeClassifier # To build SML
 from sklearn.ensemble import RandomForestRegressor # To build SML
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import mean_squared_error
-
 
 # Function to load the dataset
 @st.experimental_memo  # Cache the function to enhance performance
@@ -69,7 +60,8 @@ for col in [df.columns]:
 
 # Set the app title and sidebar header
 st.title("Mushroom Classifier")
-st.sidebar.header("Filters 📊")
+st.sidebar.header("Choose what you want to do")
+
 
 # Introduction
 
@@ -138,6 +130,7 @@ elif visualization_option == "Countplot of every variable":
 # Display dataset overview
 st.header("Dataset Overview")
 st.dataframe(df.head())   
+
 
 # We labelencode all the columns
 
@@ -251,57 +244,61 @@ def mushroom_class(bruises, cap_color, odor, gill_attachment, gill_color, stalk_
 
 st.header("Mushroom classification")
 
-bruis = st.radio(
-    'Does the mushroom have bruises?',
-    ('bruises','no_bruises'))
+col1, col2 = st.columns(2)
 
-cap = st.radio(
-    'What color is the mushroom cap?',
-    ("red", "blue", "orange", "yellow", "brown", "white"))
+with col1:
+    bruis = st.radio(
+        'Does the mushroom have bruises?',
+        ('bruises','no_bruises'))
+    
+    cap = st.radio(
+        'What color is the mushroom cap?',
+        ("red", "blue", "orange", "yellow", "brown", "white"))
+    
+    od = st.radio(
+        'How does the mushroom smell?',
+        ("almond", "anise", "creosote", "fishy", "foul", "musty", "none", "pungent", "spicy"))
+    
+    gi_ac = st.radio(
+        'How are the gills attached?',
+        ("attached", "descending", "free", "notched"))
+    
+    gi_co = st.radio(
+        'What color are the gills?',
+        ("black", "brown", "buff", "chocolate", "gray", "green", "orange", "pink", "purple", "red", "white", "yellow"))
+    
+    st_su_ab_ri = st.radio(
+        'Stalk surface above ring',
+        ("fibrous", "scaly", "silky", "smooth"))
+    
+    st_su_be_ri = st.radio(
+        'Stalk surface below ring',
+        ("fibrous", "scaly", "silky", "smooth"))
 
-od = st.radio(
-    'How does the mushroom smell?',
-    ("almond", "anise", "creosote", "fishy", "foul", "musty", "none", "pungent", "spicy"))
-
-gi_ac = st.radio(
-    'How are the gills attached?',
-    ("attached", "descending", "free", "notched"))
-
-gi_co = st.radio(
-    'What color are the gills?',
-    ("black", "brown", "buff", "chocolate", "gray", "green", "orange", "pink", "purple", "red", "white", "yellow"))
-
-st_su_ab_ri = st.radio(
-    'Stalk surface above ring',
-    ("fibrous", "scaly", "silky", "smooth"))
-
-st_su_be_ri = st.radio(
-    'Stalk surface below ring',
-    ("fibrous", "scaly", "silky", "smooth"))
-
-st_co_ab_ri = st.radio(
-    'Stalk color above ring',
-    ("brown", "buff", "cinnamon", "gray", "orange", "pink", "red", "white", "yellow"))
-
-st_co_be_ri = st.radio(
-    'Stalk color below ring',
-    ("brown", "buff", "cinnamon", "gray", "orange", "pink", "red", "white", "yellow"))
-
-ri_ty = st.radio(
-    'Ring type',
-    ("evanescent", "flaring", "large", "none", "pendant"))
-
-sp_pr_co = st.radio(
-    'Spore print color',
-    ("black", "brown", "buff", "chocolate", "green", "orange", "purple", "white", "yellow"))
-
-po = st.radio(
-    'Population',
-    ("abundant", "clustered", "numerous", "scattered", "several", "solitary"))
-
-ha = st.radio(
-    'Habitat',
-    ("grasses", "leaves", "meadows", "paths", "urban", "waste", "woods"))
+with col2:
+    st_co_ab_ri = st.radio(
+        'Stalk color above ring',
+        ("brown", "buff", "cinnamon", "gray", "orange", "pink", "red", "white", "yellow"))
+    
+    st_co_be_ri = st.radio(
+        'Stalk color below ring',
+        ("brown", "buff", "cinnamon", "gray", "orange", "pink", "red", "white", "yellow"))
+    
+    ri_ty = st.radio(
+        'Ring type',
+        ("evanescent", "flaring", "large", "none", "pendant"))
+    
+    sp_pr_co = st.radio(
+        'Spore print color',
+        ("black", "brown", "buff", "chocolate", "green", "orange", "purple", "white", "yellow"))
+    
+    po = st.radio(
+        'Population',
+        ("abundant", "clustered", "numerous", "scattered", "several", "solitary"))
+    
+    ha = st.radio(
+        'Habitat',
+        ("grasses", "leaves", "meadows", "paths", "urban", "waste", "woods"))
 
 
 if st.button("Predict"):
