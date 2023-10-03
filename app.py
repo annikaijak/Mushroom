@@ -25,7 +25,7 @@ from sklearn.metrics import mean_squared_error
 
 
 # Function to load the dataset
-@st.cache_data  # Cache the function to enhance performance
+@st.experimental_memo  # Cache the function to enhance performance
 def load_data():
     # Define the file path
     file_path = 'https://raw.githubusercontent.com/mheine93/mushroom/main/mushrooms_dataset.csv'
