@@ -60,6 +60,10 @@ for col in [df.columns]:
 
 # Set the app title and sidebar header
 st.title("Is the mushroom edible or poisonous?")
+st.sidebar.title("Options")
+st.markdown("""
+                Whit this interface you get some knowledge about mushrooms, that you didn't know you needed! Explore the options in the sidebar to get some visualisations over mushroom features and get a classifier for which mushrooms are edible and not.
+    """)
 
 # Creating side bar button
 if st.sidebar.button("Information about the interface"):
@@ -93,8 +97,7 @@ if st.sidebar.button("Visualisations"):
         "Select Visualization", 
         ["Countplot of mushroom classes",
          "Pieplot of mushroom classes",
-         "Countplot of every variable"]
-        
+         "Countplot of every variable"]   
     )
     
     # Visualizations based on user selection
