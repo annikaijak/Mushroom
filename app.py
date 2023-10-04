@@ -125,17 +125,17 @@ if choose == "Visualisations":
 
     elif visualization_option == "Countplot of Cap Color":  
         sns.countplot(data=df, x="cap-color", hue="class")
-        plt.title('Relationship between class and the mushroom's cap color')
+        plt.title('Relationship between class and the mushrooms cap color')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Odor":  
         sns.countplot(data=df, x="odor", hue="class")
-        plt.title('Relationship between class and the mushroom's odor')
+        plt.title('Relationship between class and the mushrooms odor')
         st.pyplot(plt)
         
     elif visualization_option == "Countplot of Gill Attachment":  
         sns.countplot(data=df, x="gill-attachment", hue="class")
-        plt.title('Relationship between class and the mushroom's gill attachment')
+        plt.title('Relationship between class and the mushrooms gill attachment')
         st.pyplot(plt)
 
     
