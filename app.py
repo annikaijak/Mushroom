@@ -242,8 +242,6 @@ if choose == "Mushroom Classifier":
     rf = RandomForestRegressor(n_estimators=100, random_state=42)
     rf.fit(X_train,y_train)
     
-    # print("Test Accuracy: {}%".format(round(rf.score(X_test,y_test)*100,2)))
-    
     # Define the mappings globally
     bruises_mapping = {"bruises": 1, "no_bruises": 0}
     cap_color_mapping = {"red": 0, "blue": 1, "orange": 2, "yellow": 3, "brown": 4, "white": 5}
