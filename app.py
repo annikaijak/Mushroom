@@ -73,7 +73,7 @@ if choose == "Information about the interface":
                 With this interface you get some knowledge about mushrooms, that you didn't know you needed! Explore the options in the sidebar to get some visualisations over mushroom features and get a classifier for which mushrooms are edible and not.
         """)
 
-    with st.expander("📊 **Need some help?**"):
+    with st.expander("Do you need more information?"):
                      st.markdown("""
     The goal of this interface is to help you decide if a mushroom is edible or not. The interface has these options
     - An information buttom
