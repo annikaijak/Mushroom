@@ -61,31 +61,22 @@ for col in [df.columns]:
 # Set the app title and sidebar header
 st.title("Is the mushroom edible or poisonous?")
 st.sidebar.title("Options")
-st.markdown("""
-                Whit this interface you get some knowledge about mushrooms, that you didn't know you needed! Explore the options in the sidebar to get some visualisations over mushroom features and get a classifier for which mushrooms are edible and not.
-    """)
 
 # Creating side bar button
 if st.sidebar.button("Information about the interface"):
     st.markdown("""
-                Welcome to the HR Attrition Dashboard. In the backdrop of rising employee turnovers, HR departments are stressing the significance of predicting and understanding employee departures. Through the lens of data analytics, this dashboard unveils the deeper causes of employee churn and proposes strategies to boost employee retention.
-    """)
-    with st.expander("📊 **Objective**"):
+                With this interface you get some knowledge about mushrooms, that you didn't know you needed! Explore the options in the sidebar to get some visualisations over mushroom features and get a classifier for which mushrooms are edible and not.
+        """)
+
+    with st.expander("📊 **Need some help?**"):
                      st.markdown("""
-    At the heart of this dashboard is the mission to visually decode data, equipping HR experts with insights to tackle these queries:
-    - Which company factions face a greater likelihood of employee exits?
-    - What might be pushing these individuals to part ways?
-    - Observing the discerned trends, what incentives might hold the key to decreasing the attrition rate?
+    The goal of this interface is to help you decide if a mushroom is edible or not. The interface has these options
+    - An information buttom
+    - A visualisation buttom where you can see which features are related to a mushroom being poisonous or edible.
+    - A mushroom classifier where you can input information about a mushroom you've seen and check if you can eat it!
     """
     )
-                                 
-    # Tutorial Expander
-    with st.expander("How to Use the Dashboard 📚"):
-        st.markdown("""
-        1. **Filter Data** - Use the sidebar filters to narrow down specific data sets.
-        2. **Visualize Data** - From the dropdown, select a visualization type to view patterns.
-        3. **Insights & Recommendations** - Scroll down to see insights derived from the visualizations and actionable recommendations.
-        """)
+                    
 
 if st.sidebar.button("Visualisations"):
     # Displaying the Attrition Analysis header
