@@ -299,8 +299,8 @@ if choose == "Mushroom Classifier":
             ("grasses", "leaves", "meadows", "paths", "urban", "waste", "woods"))
     
     
-    if st.button("Predict"):
-        result = mushroom_class(bruis, cap, od, gi_ac, gi_co, st_su_ab_ri,
-                       st_su_be_ri, st_co_ab_ri, st_co_be_ri, ri_ty,
-                       sp_pr_co, po, ha)
-        st.text(result)
+        if st.button("Predict"):
+            result = mushroom_class(bruis, cap, od, gi_ac, gi_co, st_su_ab_ri,
+                           st_su_be_ri, st_co_ab_ri, st_co_be_ri, ri_ty,
+                           sp_pr_co, po, ha)
+            st.text(result)
