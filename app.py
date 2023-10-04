@@ -61,11 +61,14 @@ for col in [df.columns]:
 # Set the app title and sidebar header
 st.title("Is the mushroom edible or poisonous?")
 st.sidebar.title("Options")
-st.sidebar.selectbox("Choose an option", ("Information about the interface", "Visualisations", "Mushroom Classifier"))
+choose = st.sidebar.selectbox(
+    "Select an option", 
+    ["Information about the interface", 
+     "Visualisations", 
+     "Mushroom Classifier"]
+)
 
-# Creating side bar button
-                     
-if st.sidebar.button("Information about the interface"):
+if choose == "Information about the interface":
     st.markdown("""
                 With this interface you get some knowledge about mushrooms, that you didn't know you needed! Explore the options in the sidebar to get some visualisations over mushroom features and get a classifier for which mushrooms are edible and not.
         """)
@@ -80,7 +83,7 @@ if st.sidebar.button("Information about the interface"):
     )
                     
 
-if st.sidebar.button("Visualisations"):
+if choose == "Visualisations":
     # Displaying the Attrition Analysis header
     st.header("EDA 📊")
     
@@ -124,7 +127,8 @@ if st.sidebar.button("Visualisations"):
     st.header("Dataset Overview")
     st.dataframe(df.head())   
 
-if st.sidebar.button("Mushroom Classifier"):
+
+if choose == "Mushroom Classifier":
 
     # We labelencode all the columns
     
