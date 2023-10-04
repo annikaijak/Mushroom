@@ -59,13 +59,10 @@ for col in [df.columns]:
     df[col] = df[col].astype('category')
 
 # Set the app title and sidebar header
-st.title("Mushroom Classifier")
-st.sidebar.header("Choose what you want to do?")
-choose = st.sidebar.selectbox(" ", ("Information about the interface", "EDA", "Mushroom Classifier"))
+st.title("Is the mushroom edible or poisonous?")
 
-# Introduction
-
-if choose == 'Information about the interface':
+# Creating side bar button
+if st.sidebar.button("Information about the interface"):
     st.markdown("""
                 Welcome to the HR Attrition Dashboard. In the backdrop of rising employee turnovers, HR departments are stressing the significance of predicting and understanding employee departures. Through the lens of data analytics, this dashboard unveils the deeper causes of employee churn and proposes strategies to boost employee retention.
     """)
@@ -86,7 +83,7 @@ if choose == 'Information about the interface':
         3. **Insights & Recommendations** - Scroll down to see insights derived from the visualizations and actionable recommendations.
         """)
 
-if choose == 'EDA':
+if st.sidebar.button("Which features influence if the mushroom is poisonous?"):
     # Displaying the Attrition Analysis header
     st.header("EDA 📊")
     
@@ -131,7 +128,7 @@ if choose == 'EDA':
     st.header("Dataset Overview")
     st.dataframe(df.head())   
 
-if choose == 'Mushroom Classifier':
+if st.sidebar.button("Mushroom Classifier"):
 
     # We labelencode all the columns
     
