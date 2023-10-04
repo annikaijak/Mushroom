@@ -85,7 +85,7 @@ if choose == "Information about the interface":
 
 if choose == "Visualisations":
     # Displaying the Attrition Analysis header
-    st.header("EDA 📊")
+    st.header("Visualisations")
     
     
     # Dropdown to select the type of visualization
@@ -93,7 +93,10 @@ if choose == "Visualisations":
         "Select Visualization", 
         ["Countplot of mushroom classes",
          "Pieplot of mushroom classes",
-         "Countplot of every variable"]   
+         "Countplot of mushroom bruises",
+         "Countplot of Cap Color",
+         "Countplot of Odor",
+         "Countplot of Gill Attachment"]   
     )
     
     # Visualizations based on user selection
@@ -106,7 +109,6 @@ if choose == "Visualisations":
         st.pyplot(plt)
     
     elif visualization_option == "Pieplot of mushroom classes":
-        # KDE plot for Distance from Home based on Attrition
         plt.plot()
         class_pie = df['class'].value_counts()
         mushroom_size = class_pie.values.tolist()
@@ -116,13 +118,27 @@ if choose == "Visualisations":
         patches = plt.pie(mushroom_size, labels=mushroom_labels, autopct='%1.1f%%', startangle=150)
         st.pyplot(plt)
         
-    elif visualization_option == "Countplot of every variable":
-        # KDE plot for Distance from Home based on Attrition
-        for i, col in enumerate(df.columns):
-            plt.figure(i)
-            sns_plot = sns.countplot(x=col, hue='class', data=df)
-            st.pyplot(plt)    
+    elif visualization_option == "Countplot of mushroom bruises":  
+        sns.countplot(data=df, x="bruises", hue="class")
+        plt.title('Relationship between class and the mushroom having bruises')
+        st.pyplot(plt)
+
+    elif visualization_option == "Countplot of Cap Color":  
+        sns.countplot(data=df, x="cap-color", hue="class")
+        plt.title('Relationship between class and the mushroom's cap color')
+        st.pyplot(plt)
+
+    elif visualization_option == "Countplot of Odor":  
+        sns.countplot(data=df, x="odor", hue="class")
+        plt.title('Relationship between class and the mushroom's odor')
+        st.pyplot(plt)
         
+    elif visualization_option == "Countplot of Gill Attachment":  
+        sns.countplot(data=df, x="gill-attachment", hue="class")
+        plt.title('Relationship between class and the mushroom's gill attachment')
+        st.pyplot(plt)
+
+    
     # Display dataset overview
     st.header("Dataset Overview")
     st.dataframe(df.head())   
