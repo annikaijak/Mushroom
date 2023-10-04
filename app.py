@@ -83,7 +83,7 @@ if st.sidebar.button("Information about the interface"):
         3. **Insights & Recommendations** - Scroll down to see insights derived from the visualizations and actionable recommendations.
         """)
 
-if st.sidebar.button("Which features influence if the mushroom is poisonous?"):
+if st.sidebar.button("Visualisations"):
     # Displaying the Attrition Analysis header
     st.header("EDA 📊")
     
