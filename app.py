@@ -87,14 +87,6 @@ if choose == "Visualisations":
     # Displaying the Attrition Analysis header
     st.header("Visualisations")
     
-    st.subheader("Countplot of mushroom classes")
-    plt.figure(figsize=(10, 6))
-    sns.set_style("darkgrid")
-    sns.countplot(data=df, x="class")
-    plt.title('Edible vs poisonous mushrooms')
-    st.pyplot(plt)
-
-    
     # Dropdown to select the type of visualization
     visualization_option = st.selectbox(
         "Select Visualization", 
