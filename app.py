@@ -156,47 +156,47 @@ if choose == "Visualisations":
 
     elif visualization_option == "Countplot of Gill Color":  
         sns.countplot(data=df, x="gill-color", hue="class")
-        plt.title('Relationship between class and the mushrooms gill color)
+        plt.title('Relationship between class and the mushrooms gill color')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Stalk Surface Above Ring":  
         sns.countplot(data=df, x="stalk-surface-above-ring", hue="class")
-        plt.title('Relationship between class and the mushrooms stalk surface above ring)
+        plt.title('Relationship between class and the mushrooms stalk surface above ring')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Stalk Surface Below Ring":  
         sns.countplot(data=df, x="stalk-surface-below-ring", hue="class")
-        plt.title('Relationship between class and the mushrooms stalk surface below ring)
+        plt.title('Relationship between class and the mushrooms stalk surface below ring')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Stalk Color Above Ring":  
         sns.countplot(data=df, x="stalk-color-above-ring", hue="class")
-        plt.title('Relationship between class and the mushrooms stalk color above ring)
+        plt.title('Relationship between class and the mushrooms stalk color above ring')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Stalk Color Below Ring":  
         sns.countplot(data=df, x="stalk-color-below-ring", hue="class")
-        plt.title('Relationship between class and the mushrooms stalk color below ring)
+        plt.title('Relationship between class and the mushrooms stalk color below ring')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Ring Type":  
         sns.countplot(data=df, x="ring-type", hue="class")
-        plt.title('Relationship between class and the mushrooms ring type
+        plt.title('Relationship between class and the mushrooms ring type')
         st.pyplot(plt)
                       
     elif visualization_option == "Countplot of Spore Print Color":  
         sns.countplot(data=df, x="spore-print-color", hue="class")
-        plt.title('Relationship between class and the mushrooms spore print color)
+        plt.title('Relationship between class and the mushrooms spore print color')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Population":  
         sns.countplot(data=df, x="population", hue="class")
-        plt.title('Relationship between class and the mushrooms population)
+        plt.title('Relationship between class and the mushrooms population')
         st.pyplot(plt)
 
     elif visualization_option == "Countplot of Habitat":  
         sns.countplot(data=df, x="habitat", hue="class")
-        plt.title('Relationship between class and the mushrooms habitat)
+        plt.title('Relationship between class and the mushrooms habitat')
         st.pyplot(plt)
 
     
